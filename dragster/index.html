@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dragster.js Demo</title>
+</head>
+<body>
+    <h1>Dragster.js Demo</h1>
+    <p>Drag elements from one column to another column. Change their positions. Play around and have fun :)</p>
+    <a href="https://github.com/sunpietro/dragster" class="btn">Dragster.js Github repository</a>
+    <div class="demo">
+        <div class="dragster-region">
+            <div class="dragster-block">1.1</div>
+            <div class="dragster-block">
+                <h3>Dragster Block 1.2</h3>
+                <img src="sunpietro.png" alt="Sunpietro - logo" width="150" height="150">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="dragster-block">1.3</div>
+            <div class="dragster-block">1.4</div>
+        </div>
+        <div class="dragster-region">
+            <div class="dragster-block">
+                <h3>Dragster Block 2.1</h3>
+                <img src="sunpietro.png" alt="Sunpietro - logo" width="150" height="150">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="dragster-block">2.2</div>
+            <div class="dragster-block">2.3</div>
+            <div class="dragster-block">2.4</div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="dragster.style.min.css">
+    <script src="dragster.mouse.touch.min.js"></script>
+    <script>
+    (function () {
+        var dd = new DD({
+            elementSelector: '.dragster-block',
+            regionSelector: '.dragster-region'
+        });
+    })();
+    </script>
+</body>
+</html>
