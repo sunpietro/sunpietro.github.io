@@ -50,7 +50,9 @@
     <script src="dragster.mouse.touch.min.js"></script>
     <script>
     (function () {
-        var dd = new DD({
+        'use strict';
+
+        new window.Dragster({
             elementSelector: '.dragster-block',
             regionSelector: '.dragster-region'
         });
