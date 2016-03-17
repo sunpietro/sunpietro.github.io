@@ -1,0 +1,126 @@
+/**
+ * AdaptiveNav - JS plugin to allow navigation menus to adapt to viewport width | v1.0.0
+ * https://github.com/sunpietro/adaptive-nav
+ *
+ * Copyright 2016 Piotr Nalepa
+ * http://blog.piotrnalepa.pl
+ *
+ * Released under the MIT license
+ * https://github.com/sunpietro/adaptive-nav/blob/master/LICENSE
+ *
+ * Date: 2016-03-16T22:30Z
+ */
+
+* {
+    box-sizing: border-box;
+}
+
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.4rem;
+}
+
+body {
+    width: 90vw;
+    margin: 2rem auto;
+}
+
+.adaptive-nav {
+    width: 100%;
+    background: #b30;
+    color: #fff;
+    position: relative;
+}
+
+.adaptive-nav--has-toggler-active {
+    padding-right: 3.4rem;
+}
+
+.adaptive-nav__list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #b30;
+}
+
+.adaptive-nav__list--secondary {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    flex-direction: column;
+    transition: transform .3s cubic-bezier(.25,.8,.25,1);
+    transform: scaleY(1);
+    transform-origin: 50% 0;
+}
+
+.adaptive-nav__list--secondary--hidden {
+    transform: scaleY(0);
+}
+
+.adaptive-nav__list__item {
+    white-space: nowrap;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    transition: background .3s cubic-bezier(.25,.8,.25,1);
+}
+
+.adaptive-nav__list__item:hover {
+    background: #720;
+}
+
+.adaptive-nav__list--secondary .adaptive-nav__list__item {
+    padding: .5rem 1rem;
+}
+
+.adaptive-nav__toggler {
+    background: transparent;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 54px;
+    width: 54px;
+    transform: translate(0, -50%) rotate(0);
+    transform-origin: center center;
+    transition: all .3s cubic-bezier(.25,.8,.25,1);
+    cursor: pointer;
+    padding: 0;
+}
+
+.adaptive-nav__toggler:before,
+.adaptive-nav__toggler:after {
+    content: '||';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-25%, -50%);
+    letter-spacing: .125rem;
+}
+
+.adaptive-nav__toggler:after {
+    transform: translate(-75%, -50%);
+}
+
+.adaptive-nav__toggler:hover,
+.adaptive-nav__toggler--active {
+    transform: translate(0, -50%) rotate(90deg);
+}
+
+.is-hidden {
+    display: none!important;
+}
