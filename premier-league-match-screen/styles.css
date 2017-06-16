@@ -1,0 +1,271 @@
+@font-face {
+    font-family: 'PremierSans-Regular';
+    src: url('./fonts/PremierLeagueW01-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'PremierSans-Bold';
+    src: url('./fonts/PremierLeagueW01-Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'PremierSans-Light';
+    src: url('./fonts/PremierLeagueW01-Light.woff2') format('woff2');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'PremierSans-Regular', Roboto, Helvetica, Arial, sans-serif;
+    background: url('anfield.jpeg');
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.intro {
+    display: flex;
+    height: 80vh;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    overflow: hidden;
+}
+
+[class^="intro__panel"] {
+    background: rgba(37, 215, 224, .8);
+    transition: all .5s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+}
+
+.intro__panel--right {
+    width: 100%;
+}
+
+.intro__league-badge-wrapper {
+    position: relative;
+    height: 100%;
+}
+
+.intro__league-badge-outer,
+.intro__league-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.intro__league-badge {
+    width: 640px;
+    height: 200px;
+}
+
+.intro__league-logo {
+    height: 108px;
+    width: auto;
+    opacity: 0;
+}
+
+.intro__league-logo,
+.intro__league-badge {
+    transition: opacity .5s ease-out;
+}
+
+.intro__teams-wrapper {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 15vw;
+    transform: translate3d(0, -50%, 0);
+    width: 70vw;
+    overflow: hidden;
+}
+
+.intro__teams {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+}
+
+[class^="intro__team--"] {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.intro__team--home {
+    transform: translate3d(-50vw, 0, 0);
+    z-index: 3;
+    transition: transform .5s .5s ease-out;
+}
+
+.intro__team--away {
+    transform: translate3d(10vw, -100%, 0);
+    opacity: 0;
+    z-index: 2;
+    transition: transform .5s 1s ease-out, opacity .5s 1.1s ease-out;
+}
+
+.intro__team-name {
+    padding: 0 30px;
+    line-height: 90px;
+    background: rgba(64, 4, 68, 1);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 72px;
+    z-index: 2;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, .5);
+    font-family: 'PremierSans-Bold', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.intro__team--away .intro__team-name:before {
+    content: '';
+    flex: 1 1 100%;
+    height: 0;
+    width: calc(100% - 180px);
+    position: absolute;
+    left: -30px;
+    top: 0;
+    background: #000;
+    box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .65);
+}
+
+.intro__team-badge-wrapper {
+    height: 90px;
+    width: 90px;
+    padding: 4px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, .65);
+}
+
+.intro__team-badge {
+    max-width: 100%;
+    width: auto;
+    max-height: 100%;
+    height: auto;
+}
+
+.intro__team-badge-wrapper {
+    transform: translate3d(-90px, 0, 0);
+    transition: transform .5s 1.7s ease-out;
+}
+
+.intro__hashtag {
+    background: rgb(37, 215, 224);
+    display: flex;
+    padding: 0 30px;
+    line-height: 24px;
+    font-weight: 700;
+    transform: translate3d(10vw, -100%, 0);
+    align-self: flex-start;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    opacity: 0;
+    transition: transform .5s 1.7s ease-out, opacity .5s 1.8s ease-out;
+}
+
+.intro__hashtag:before {
+    content: '';
+    height: 0;
+    width: 100%;
+    box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .65);
+    flex: 1 1 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.intro__field-info {
+    background: rgba(64, 4, 68, .9);
+    color: rgb(37, 215, 224);
+    display: flex;
+    padding: 0 30px;
+    line-height: 24px;
+    font-family: 'PremierSans-Regular', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    align-self: flex-end;
+    transform: translate3d(-155px, 100%, 0);
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: -30px;
+    transition: transform .5s 1.7s ease-out, opacity .5s 1.8s ease-out;
+}
+
+.intro__field-info:after {
+    content: '';
+    height: 0px;
+    width: 100%;
+    box-shadow: 0 -1px 5px 1px rgba(0, 0, 0, .65);
+    flex: 1 1 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.intro__teams,
+.intro__team-badge {
+    transition: all .5s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+}
+
+.intro--teams {
+    justify-content: space-between;
+}
+
+.intro--teams .intro__panel--left {
+    width: 30vw;
+}
+
+.intro--teams .intro__panel--right {
+    width: 15vw;
+}
+
+.intro--teams .intro__teams-wrapper {
+    opacity: 1;
+}
+
+.intro--teams .intro__team--home {
+    transform: translate3d(0, 0, 0);
+    padding-top: 24px;
+}
+
+.intro--teams .intro__team--away {
+    transform: translate3d(10vw, 0, 0);
+    opacity: 1;
+}
+
+.intro--teams .intro__league-badge {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.intro--teams .intro__league-logo {
+    opacity: 1;
+}
+
+.intro--teams .intro__team-badge-wrapper {
+    transform: translate3d(0, 0, 0);
+}
+
+.intro--teams .intro__hashtag {
+    opacity: 1;
+    transform: translate3d(10vw, 0, 0);
+}
+
+.intro--teams .intro__field-info {
+    opacity: 1;
+    transform: translate3d(-155px, 0, 0);
+}
