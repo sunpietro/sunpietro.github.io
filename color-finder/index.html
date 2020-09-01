@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>@sunpietro/color-finder demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>@sunpietro/color-finder demo</h1>
+    <h2>Find out how similar colors are visually</h2>
+    <p>This is a very design-agnostic demo. If you want to know more about this library go to <a href="https://github.com/sunpietro/color-finder">the library repository page</a>.</p>
+    <p><small><em>This demo might not look perfect on mobile devices.</em></small></p>
+    <form id="color-checker" class="ui form">
+      <div class="field field--sample-color" data-expanded="1">
+        <button type="button" class="field__input-toggler" data-has-color="0">
+          <span class="sample-color color"></span>
+        </button>
+        <div class="field__input-wrapper">
+          <label class="field__label" for="sample">Sample color:</label>
+          <input class="field__input" type="text" id="sample" name="sample" />
+        </div>
+      </div>
+      <div class="field field--guideline-colors">
+        <div class="description">
+          <p>Insert a color in a textarea new line without comma. You can use the following list of colors (copy and paste them into the textarea):</p>
+          <p>
+            <small>
+              #b3a212<br/>
+              #bb3300<br/>
+              #09a1b3<br/>
+              #bada55<br/>
+              #ff34aa<br/>
+              #123456<br/>
+              #707CCC<br/>
+              #D9FFBF<br/>
+              #70CC86
+            </small>
+          </p>
+        </div>
+        <div class="field__container">
+          <label class="field__label" for="colors"
+            >Guideline colors<br />(# + 3 or 6 chars each):</label
+          >
+          <textarea
+            class="field__input"
+            id="colors"
+            name="colors"
+            rows="5"
+          ></textarea>
+          <div class="actions">
+            <button type="submit">Calculate</button>
+            <button type="reset">Reset</button>
+          </div>
+          <div class="results">
+            <div class="results__color--sample color"></div>
+            <div class="results__color--closest color"></div>
+          </div>
+        </div>
+        <div id="guideline-colors"></div>
+      </div>
+    </form>
+    <script src="ColorFinder.js"></script>
+    <script src="scripts.js"></script>
+  </body>
+</html>
