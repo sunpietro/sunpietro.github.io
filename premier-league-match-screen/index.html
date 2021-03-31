@@ -1,79 +1,111 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Premier League intro</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
     <style>
-        .btn {
-            border-radius: .25rem;
-            padding: .25rem .5rem;
-            color: #fff;
-            background: #b30;
-            display: inline-block;
-            text-decoration: none;
-            transition: all .3s ease-in-out;
-        }
-        .btn:hover {
-            background: #830;
-        }
-        .floating-window {
-            background: #fff;
-            position: fixed;
-            transform: translate3d(0,0,0);
-            z-index: 1000;
-            padding: .5rem;
-        }
+      .btn {
+        border-radius: 0.25rem;
+        padding: 0.25rem 0.5rem;
+        color: #fff;
+        background: #b30;
+        display: inline-block;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+      }
+      .btn:hover {
+        background: #830;
+      }
+      .floating-window {
+        background: #fff;
+        position: fixed;
+        transform: translate3d(0, 0, 0);
+        z-index: 1000;
+        padding: 0.5rem;
+      }
 
-        .floating-window h1 {
-            font-size: 20px;
-            margin-top: 0;
-        }
+      .floating-window h1 {
+        font-size: 20px;
+        margin-top: 0;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="floating-window">
-        <h1>Premier League Match Screen - concept demo</h1>
-        <p><a href="//github.com/sunpietro/premier-league-match-screen" class="btn">Premier League Match Screen - Github repository</a></p>
-        <p><button class="btn--toggle-state">Toggle state</button></p>
-        <p><small>May have some smaller issues. Viewed best on Mozilla Firefox and Google Chrome.</small></p>
+      <h1>Premier League Match Screen - concept demo</h1>
+      <p>
+        <a href="//github.com/sunpietro/premier-league-match-screen" class="btn"
+          >Premier League Match Screen - Github repository</a
+        >
+      </p>
+      <p><button class="btn--toggle-state">Toggle state</button></p>
+      <p>
+        <small
+          >May have some smaller issues. Viewed best on Mozilla Firefox and
+          Google Chrome.</small
+        >
+      </p>
     </div>
     <div class="intro">
-        <div class="intro__panel--left"></div>
-        <div class="intro__panel--right">
-            <div class="intro__league-badge-wrapper">
-                <div class="intro__league-badge-outer">
-                    <img src="./premier-league-logo.png" alt="Premier League Badge" class="intro__league-logo">
-                    <img src="./premier-league-oneline-badge.png" alt="Premier League Badge" class="intro__league-badge">
-                </div>
-            </div>
+      <div class="intro__panel--left"></div>
+      <div class="intro__panel--right">
+        <div class="intro__league-badge-wrapper">
+          <div class="intro__league-badge-outer">
+            <img
+              src="./premier-league-logo.png"
+              alt="Premier League Badge"
+              class="intro__league-logo"
+            />
+            <img
+              src="./premier-league-oneline-badge.png"
+              alt="Premier League Badge"
+              class="intro__league-badge"
+            />
+          </div>
         </div>
-        <div class="intro__teams-wrapper">
-            <div class="intro__teams">
-                <div class="intro__team--home">
-                    <div class="intro__team-name">
-                        <div class="intro__field-info">Live from Anfield</div>
-                        <div class="intro__team-name-label">Liverpool</div>
-                    </div>
-                    <div class="intro__team-badge-wrapper">
-                        <img src="./liverpool-badge.png" alt="Liverpool FC badge" class="intro__team-badge">
-                    </div>
-                </div>
-                <div class="intro__team--away">
-                    <div class="intro__team-name">Hull City</div>
-                    <div class="intro__team-badge-wrapper">
-                        <img src="./hull-city-badge.png" alt="Hull City AFC badge" class="intro__team-badge">
-                    </div>
-                </div>
-                <div class="intro__hashtag">#LIVvHUL</div>
+      </div>
+      <div class="intro__teams-wrapper">
+        <div class="intro__teams">
+          <div class="intro__team--home">
+            <div class="intro__team-name">
+              <div class="intro__field-info">Live from Anfield</div>
+              <div class="intro__team-name-label">Liverpool</div>
             </div>
+            <div class="intro__team-badge-wrapper">
+              <img
+                src="./liverpool-badge.png"
+                alt="Liverpool FC badge"
+                class="intro__team-badge"
+              />
+            </div>
+          </div>
+          <div class="intro__team--away">
+            <div class="intro__team-name">Hull City</div>
+            <div class="intro__team-badge-wrapper">
+              <img
+                src="./hull-city-badge.png"
+                alt="Hull City AFC badge"
+                class="intro__team-badge"
+              />
+            </div>
+          </div>
+          <div class="intro__hashtag">#LIVvHUL</div>
         </div>
+      </div>
     </div>
-    <script src="scripts.js"></script>
-</body>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
+      gtag("config", "G-468TGXP5G2");
+    </script>
+    <script src="scripts.js"></script>
+  </body>
 </html>

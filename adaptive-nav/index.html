@@ -1,57 +1,83 @@
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Adaptive Nav by Piotr Nalepa - @sunpietro</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta content="width=device-width, initial-scale=1" name="viewport">
-        <link rel="stylesheet" href="src/css/adaptive-nav.css">
-        <style>
-            .btn {
-                border-radius: .5rem;
-                padding: .5rem 1rem;
-                color: #fff;
-                background: #b30;
-                display: inline-block;
-                text-decoration: none;
-                margin-bottom: 1rem;
-                transition: all .3s ease-in-out;
-            }
-            .btn:hover {
-                background: #830;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>AdaptiveNav demo</h1>
-        <p>Resize the window to see the feature in action.</p>
-        <p><a href="https://github.com/sunpietro/adaptive-nav" class="btn">AdaptiveNav Github repository</a></p>
-        <nav class="adaptive-nav">
-            <ul class="adaptive-nav__list">
-                <li class="adaptive-nav__list__item">Item 1</li>
-                <li class="adaptive-nav__list__item">Item 2</li>
-                <li class="adaptive-nav__list__item">Item 3</li>
-                <li class="adaptive-nav__list__item">Item 4</li>
-                <li class="adaptive-nav__list__item">Item 5</li>
-                <li class="adaptive-nav__list__item">Item 6</li>
-                <li class="adaptive-nav__list__item">Item 7</li>
-                <li class="adaptive-nav__list__item">Item 8</li>
-                <li class="adaptive-nav__list__item">Item 9</li>
-                <li class="adaptive-nav__list__item">Item 10</li>
-                <li class="adaptive-nav__list__item">Item 11</li>
-                <li class="adaptive-nav__list__item">Item 12</li>
-                <li class="adaptive-nav__list__item">Item 13</li>
-                <li class="adaptive-nav__list__item">Item 14</li>
-                <li class="adaptive-nav__list__item">Item 15</li>
-            </ul>
-        </nav>
-        <footer>
-            <p><small>AdaptiveNav by Piotr Nalepa | @sunpietro at github.com - see the repository: <a href="https://github.com/sunpietro/adaptive-nav">AdaptiveNav at github.com</a></small></p>
-        </footer>
-        <script src="src/js/adaptive-nav.min.js"></script>
-        <script>
-            (function () {
-                new AdaptiveNav();
-            })();
-        </script>
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Adaptive Nav by Piotr Nalepa - @sunpietro</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="src/css/adaptive-nav.css" />
+    <style>
+      .btn {
+        border-radius: 0.5rem;
+        padding: 0.5rem 1rem;
+        color: #fff;
+        background: #b30;
+        display: inline-block;
+        text-decoration: none;
+        margin-bottom: 1rem;
+        transition: all 0.3s ease-in-out;
+      }
+      .btn:hover {
+        background: #830;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>AdaptiveNav demo</h1>
+    <p>Resize the window to see the feature in action.</p>
+    <p>
+      <a href="https://github.com/sunpietro/adaptive-nav" class="btn"
+        >AdaptiveNav Github repository</a
+      >
+    </p>
+    <nav class="adaptive-nav">
+      <ul class="adaptive-nav__list">
+        <li class="adaptive-nav__list__item">Item 1</li>
+        <li class="adaptive-nav__list__item">Item 2</li>
+        <li class="adaptive-nav__list__item">Item 3</li>
+        <li class="adaptive-nav__list__item">Item 4</li>
+        <li class="adaptive-nav__list__item">Item 5</li>
+        <li class="adaptive-nav__list__item">Item 6</li>
+        <li class="adaptive-nav__list__item">Item 7</li>
+        <li class="adaptive-nav__list__item">Item 8</li>
+        <li class="adaptive-nav__list__item">Item 9</li>
+        <li class="adaptive-nav__list__item">Item 10</li>
+        <li class="adaptive-nav__list__item">Item 11</li>
+        <li class="adaptive-nav__list__item">Item 12</li>
+        <li class="adaptive-nav__list__item">Item 13</li>
+        <li class="adaptive-nav__list__item">Item 14</li>
+        <li class="adaptive-nav__list__item">Item 15</li>
+      </ul>
+    </nav>
+    <footer>
+      <p>
+        <small
+          >AdaptiveNav by Piotr Nalepa | @sunpietro at github.com - see the
+          repository:
+          <a href="https://github.com/sunpietro/adaptive-nav"
+            >AdaptiveNav at github.com</a
+          ></small
+        >
+      </p>
+    </footer>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-468TGXP5G2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-468TGXP5G2");
+    </script>
+    <script src="src/js/adaptive-nav.min.js"></script>
+    <script>
+      (function () {
+        new AdaptiveNav();
+      })();
+    </script>
+  </body>
 </html>

@@ -10,9 +10,24 @@
   <body>
     <h1>@sunpietro/color-finder demo</h1>
     <h2>Find out how similar colors are visually</h2>
-    <p><a href="https://blog.piotrnalepa.pl/2020/09/01/how-to-find-a-similar-colour-in-your-colour-guidelines-with-javascript/">Article I'm explaining how it works</a></p>
-    <p>This is a very design-agnostic demo. If you want to know more about this library go to <a href="https://github.com/sunpietro/color-finder">the library repository page</a>.</p>
-    <p><small><em>This demo might not look perfect on mobile devices.</em></small></p>
+    <p>
+      <a
+        href="https://blog.piotrnalepa.pl/2020/09/01/how-to-find-a-similar-colour-in-your-colour-guidelines-with-javascript/"
+        >Article I'm explaining how it works</a
+      >
+    </p>
+    <p>
+      This is a very design-agnostic demo. If you want to know more about this
+      library go to
+      <a href="https://github.com/sunpietro/color-finder"
+        >the library repository page</a
+      >.
+    </p>
+    <p>
+      <small
+        ><em>This demo might not look perfect on mobile devices.</em></small
+      >
+    </p>
     <form id="color-checker" class="ui form">
       <div class="field field--sample-color" data-expanded="1">
         <button type="button" class="field__input-toggler" data-has-color="0">
@@ -25,17 +40,20 @@
       </div>
       <div class="field field--guideline-colors">
         <div class="description">
-          <p>Insert a color in a textarea new line without comma. You can use the following list of colors (copy and paste them into the textarea):</p>
+          <p>
+            Insert a color in a textarea new line without comma. You can use the
+            following list of colors (copy and paste them into the textarea):
+          </p>
           <p>
             <small>
-              #b3a212<br/>
-              #bb3300<br/>
-              #09a1b3<br/>
-              #bada55<br/>
-              #ff34aa<br/>
-              #123456<br/>
-              #707CCC<br/>
-              #D9FFBF<br/>
+              #b3a212<br />
+              #bb3300<br />
+              #09a1b3<br />
+              #bada55<br />
+              #ff34aa<br />
+              #123456<br />
+              #707CCC<br />
+              #D9FFBF<br />
               #70CC86
             </small>
           </p>
@@ -62,7 +80,21 @@
         <div id="guideline-colors"></div>
       </div>
     </form>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-468TGXP5G2");
+    </script>
     <script src="ColorFinder.js"></script>
     <script src="scripts.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-468TGXP5G2"
+    ></script>
   </body>
 </html>
