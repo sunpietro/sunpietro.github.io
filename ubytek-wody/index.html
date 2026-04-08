@@ -3,56 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Ubytku Wody</title>
+    <title>Twój Kalkulator Akwarystyczny</title>
     <style>
-        body { font-family: sans-serif; background-color: #f0f8ff; display: flex; justify-content: center; padding: 20px; }
-        .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
-        h2 { color: #0056b3; margin-top: 0; }
-        .input-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 0.9em; }
-        input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 1em; }
-        .result { background: #e7f3ff; padding: 15px; border-radius: 8px; margin-top: 20px; text-align: center; }
-        .result span { font-size: 1.5em; font-weight: bold; color: #0056b3; }
-        .info { font-size: 0.8em; color: #666; margin-top: 10px; line-height: 1.4; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f4f8; color: #2d3436; display: flex; justify-content: center; padding: 20px; }
+        .card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 100%; max-width: 450px; }
+        h2 { color: #0984e3; text-align: center; margin-bottom: 25px; font-size: 1.5em; border-bottom: 2px solid #e1f5fe; padding-bottom: 10px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px; }
+        .input-group { margin-bottom: 10px; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.85em; color: #636e72; }
+        input { width: 100%; padding: 12px; border: 2px solid #dfe6e9; border-radius: 10px; box-sizing: border-box; font-size: 1em; transition: all 0.3s; }
+        input:focus { border-color: #0984e3; outline: none; background: #faffff; box-shadow: 0 0 8px rgba(9, 132, 227, 0.2); }
+        .full-width { grid-column: span 2; }
+        .main-input { background-color: #fff9db; border-color: #fab005; }
+        .main-input:focus { border-color: #f08c00; background-color: #fff9db; }
+        .result { background: #0984e3; color: white; padding: 25px; border-radius: 15px; text-align: center; margin-top: 5px; }
+        .result small { font-size: 0.9em; opacity: 0.9; }
+        .result span { font-size: 2.5em; font-weight: 800; display: block; margin-top: 5px; }
+        .highlight { background: #f1f2f6; color: #2f3542; padding: 15px; border-radius: 12px; margin-top: 20px; font-size: 0.85em; line-height: 1.6; border-left: 5px solid #0984e3; }
+        strong { color: #0984e3; }
     </style>
 </head>
 <body>
 
 <div class="card">
-    <h2>Kalkulator Akwarysty</h2>
+    <h2>Moje Akwarium</h2>
     
-    <div class="input-group">
-        <label>Zmiana poziomu wody (cm):</label>
-        <input type="number" id="heightDrop" placeholder="Np. 6 lub 14" oninput="calculate()">
+    <div class="grid">
+        <div class="input-group">
+            <label>Długość (cm)</label>
+            <input type="number" id="extLength" value="100" oninput="calculate()">
+        </div>
+        <div class="input-group">
+            <label>Szerokość (cm)</label>
+            <input type="number" id="extWidth" value="50" oninput="calculate()">
+        </div>
+        <div class="input-group">
+            <label>Wysokość (cm)</label>
+            <input type="number" id="extHeight" value="50" oninput="calculate()">
+        </div>
+        <div class="input-group">
+            <label>Szkło (mm)</label>
+            <input type="number" id="glassThick" value="10" oninput="calculate()">
+        </div>
+        <div class="input-group full-width">
+            <label style="color: #e67e22;">Spadek poziomu wody (cm)</label>
+            <input type="number" id="waterChange" class="main-input" placeholder="Wpisz np. 6" oninput="calculate()">
+        </div>
     </div>
 
     <div class="result">
-        Objętość wody:<br>
-        <span id="output">0</span> L
+        <small>Ubytek wynosi:</small>
+        <span id="output">0.00</span> Litrów
     </div>
 
-    <div class="info">
-        <strong>Ustawienia stałe:</strong><br>
-        Wymiary zewnętrzne: 100x50 cm<br>
-        Grubość szyb: 10 mm (1 cm)<br>
-        Wymiary wewnętrzne dna: 98x48 cm
+    <div id="details" class="highlight">
+        Wymiary wewn. dna: 98 x 48 cm<br>
+        Pojemność całkowita netto: 230.6 l
     </div>
 </div>
 
 <script>
     function calculate() {
-        const drop = document.getElementById('heightDrop').value;
-        const width = 98;  // 100 - 2*1
-        const depth = 48;  // 50 - 2*1
-        
-        if (drop > 0) {
-            // Obliczanie objętości: (a * b * h) / 1000
-            const liters = (width * depth * drop) / 1000;
+        const L = parseFloat(document.getElementById('extLength').value) || 0;
+        const W = parseFloat(document.getElementById('extWidth').value) || 0;
+        const H = parseFloat(document.getElementById('extHeight').value) || 0;
+        const glass = parseFloat(document.getElementById('glassThick').value) || 0;
+        const change = parseFloat(document.getElementById('waterChange').value) || 0;
+
+        const gCm = glass / 10;
+        const innerL = L - (2 * gCm);
+        const innerW = W - (2 * gCm);
+        const innerH = H - gCm;
+
+        if (innerL > 0 && innerW > 0) {
+            const liters = (innerL * innerW * (change > 0 ? change : 0)) / 1000;
             document.getElementById('output').innerText = liters.toFixed(2);
+            
+            const totalLiters = (innerL * innerW * innerH) / 1000;
+            
+            document.getElementById('details').innerHTML = 
+                `Wymiary wewn. dna: <strong>${innerL.toFixed(1)} x ${innerW.toFixed(1)} cm</strong><br>` +
+                `Pojemność całkowita netto: <strong>${totalLiters.toFixed(1)} litrów</strong><br>` +
+                `Każdy 1 cm wysokości to: <strong>${((innerL * innerW) / 1000).toFixed(2)} l</strong>`;
         } else {
-            document.getElementById('output').innerText = "0";
+            document.getElementById('output').innerText = "0.00";
         }
     }
+    
+    // Inicjalizacja przy starcie
+    calculate();
 </script>
 
 </body>
