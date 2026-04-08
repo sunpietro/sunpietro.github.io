@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Ubytku Wody</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f0f8ff; display: flex; justify-content: center; padding: 20px; }
+        .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
+        h2 { color: #0056b3; margin-top: 0; }
+        .input-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 0.9em; }
+        input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 1em; }
+        .result { background: #e7f3ff; padding: 15px; border-radius: 8px; margin-top: 20px; text-align: center; }
+        .result span { font-size: 1.5em; font-weight: bold; color: #0056b3; }
+        .info { font-size: 0.8em; color: #666; margin-top: 10px; line-height: 1.4; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Kalkulator Akwarysty</h2>
+    
+    <div class="input-group">
+        <label>Zmiana poziomu wody (cm):</label>
+        <input type="number" id="heightDrop" placeholder="Np. 6 lub 14" oninput="calculate()">
+    </div>
+
+    <div class="result">
+        Objętość wody:<br>
+        <span id="output">0</span> L
+    </div>
+
+    <div class="info">
+        <strong>Ustawienia stałe:</strong><br>
+        Wymiary zewnętrzne: 100x50 cm<br>
+        Grubość szyb: 10 mm (1 cm)<br>
+        Wymiary wewnętrzne dna: 98x48 cm
+    </div>
+</div>
+
+<script>
+    function calculate() {
+        const drop = document.getElementById('heightDrop').value;
+        const width = 98;  // 100 - 2*1
+        const depth = 48;  // 50 - 2*1
+        
+        if (drop > 0) {
+            // Obliczanie objętości: (a * b * h) / 1000
+            const liters = (width * depth * drop) / 1000;
+            document.getElementById('output').innerText = liters.toFixed(2);
+        } else {
+            document.getElementById('output').innerText = "0";
+        }
+    }
+</script>
+
+</body>
+</html>
