@@ -84,7 +84,7 @@
             document.getElementById('details').innerHTML = 
                 `Wymiary wewn. dna: <strong>${innerL.toFixed(1)} x ${innerW.toFixed(1)} cm</strong><br>` +
                 `Pojemność całkowita netto: <strong>${totalLiters.toFixed(1)} litrów</strong><br>` +
-                `Każdy 1 cm wysokości to: <strong>${((innerL * innerW) / 1000).toFixed(2)} l</strong>`;
+                `Każdy 1 cm wysokości to: <strong>${((innerL * innerW) / 1000).toFixed(3)} l</strong>`
         } else {
             document.getElementById('output').innerText = "0.00";
         }
