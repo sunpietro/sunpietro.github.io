@@ -59,7 +59,7 @@
     <div id="details" class="highlight">
         Wymiary wewn. dna: 98 x 48 cm<br>
         Pojemność całkowita netto: 230.6 l<br/>
-        <a href="https://www.qualdrop.pl/gh-plant-kalkulator/#qualdrop-calc-gh_plant" target="_blank>kalkulator GH+ Plant</a>
+        <a href="https://www.qualdrop.pl/gh-plant-kalkulator/#qualdrop-calc-gh_plant" target="_blank">kalkulator GH+ Plant</a>
     </div>
 </div>
 
@@ -85,7 +85,8 @@
             document.getElementById('details').innerHTML = 
                 `Wymiary wewn. dna: <strong>${innerL.toFixed(1)} x ${innerW.toFixed(1)} cm</strong><br>` +
                 `Pojemność całkowita netto: <strong>${totalLiters.toFixed(1)} litrów</strong><br>` +
-                `Każdy 1 cm wysokości to: <strong>${((innerL * innerW) / 1000).toFixed(3)} l</strong>`
+                `Każdy 1 cm wysokości to: <strong>${((innerL * innerW) / 1000).toFixed(3)} l</strong><br>` +
+                `<a href="https://www.qualdrop.pl/gh-plant-kalkulator/#qualdrop-calc-gh_plant" target="_blank">kalkulator GH+ Plant</a>`
         } else {
             document.getElementById('output').innerText = "0.00";
         }
